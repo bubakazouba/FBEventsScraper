@@ -11,15 +11,17 @@
     "bluebird": "^2.10.0",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.4",
     "morgan": "~1.6.1",
     "request-promise": "^0.4.3"
   },
   "bugs": {
-    "url" : "https://github.com/tobilg/facebook-events-by-location/issues"
+    "url": "https://github.com/tobilg/facebook-events-by-location/issues"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/tobilg/facebook-events-by-location.git"
+    "type": "git",
+    "url": "https://github.com/tobilg/facebook-events-by-location.git"
   },
   "license": "MIT"
 }

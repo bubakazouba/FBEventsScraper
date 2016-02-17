@@ -61,7 +61,7 @@ router.get('/', function(req, res, next) {
         <body>';
     for (var i = hittups.length - 1; i >= 0; i--) {
       var fbeventid = hittups[i].fbeventid;
-      a+=hittups[i].title+"-----"+hittups[i].description;
+      a+=(new Date(hittups[i].dateStarts*1000))+"--"+hittups[i].title+"-----"+hittups[i].description;
       a+='<div id="'+fbeventid+'" > Emoji: \n\
             <input class="emoji" name="emoji" >\n\
             <button class="btn" type="button">Submit</button>\n\
