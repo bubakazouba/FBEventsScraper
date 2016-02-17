@@ -6,8 +6,10 @@ var EventSchema = new Schema({
     duration: Number,
     dateCreated: Number,
     dateStarts: Number,
+    fbeventid: String,
     description: String,
     emoji: String,
+    confirmed: Boolean,
     images: [{
       lowQualityImageurl: String,
       highQualityImageurl: String

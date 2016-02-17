@@ -7,6 +7,13 @@ var routes = require('./routes/index');
 
 var app = express();
 
+var mongodb = require('./modules/db');
+
+mongodb.connect('mongodb://Hittup:katyCherry1738@ds043981.mongolab.com:43981/hittup', function () {
+    console.log('Connected to MongoDB.');
+});
+
+
 app.use(logger('dev'));
 app.use('/', routes);
 
