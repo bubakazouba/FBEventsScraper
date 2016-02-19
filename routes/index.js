@@ -1,4 +1,3 @@
-//http://localhost:3000/events?lat=40.710803&lng=-73.964040&distance=1000&sort=venue&access_token=1645233332355281|dUU_R1ksZlyDlpZtHXjVRbmSG8I
 var express = require('express');
 var router = express.Router();
 var Promise = require("bluebird");
@@ -75,14 +74,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/events', function(req, res, next) {
-    if (!req.query.lat || !req.query.lng || !req.query.distance || !req.query.access_token) {
+    if (!req.query.lat || !req.query.lng || !req.query.distance) {
         res.status(500).send({error: "Please specify the lat, lng, distance and access_token query parameters"});
         return;
     }
-    
+    access_token='1645233332355281|dUU_R1ksZlyDlpZtHXjVRbmSG8I';
     var idLimit = 50, //FB only allows 50 ids per /?ids= call
         currentTimestamp = (new Date().getTime()/1000).toFixed(),
-        placeUrl = "https://graph.facebook.com/v2.5/search?type=place&q=*&center=" + req.query.lat + "," + req.query.lng + "&distance=" + req.query.distance + "&limit=1000&fields=id,name&access_token=" + req.query.access_token;
+        placeUrl = "https://graph.facebook.com/v2.5/search?type=place&q=*&center=" + req.query.lat + "," + req.query.lng + "&distance=" + req.query.distance + "&limit=1000&fields=id,name&access_token=" + access_token;
     //Get places as specified
     rp.get(placeUrl).then(function(responseBody) {
       var ids = [],
